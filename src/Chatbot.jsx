@@ -2,6 +2,9 @@ import React, { useState, useRef } from 'react';
 import { Button, Drawer } from 'flowbite-react';
 import Tesseract from 'tesseract.js';
 import { FaPlus } from 'react-icons/fa';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_GENERATIVE_LANGUAGE_CLIENT);
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,28 +60,11 @@ const Chatbot = () => {
 
   // Function to send message to Gemini AI
   const sendMessageToGeminiAI = async (message) => {
-    const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
-    const apiUrl = process.env.REACT_APP_GEMINI_API_URL;
-
     try {
-      const response = await fetch(`${apiUrl}?key=${apiKey}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          contents: [
-            {
-              parts: [
-                { text: message } // User's message
-              ]
-            }
-          ]
-        }),
-      });
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const result = await model.generateContent([message]);
 
-      const data = await response.json();
-      const reply = data.candidates?.[0]?.text || 'Sorry, I could not fetch a response at the moment.';
+      const reply = result.response.text() || 'Sorry, I could not fetch a response at the moment.';
       return reply; // Assuming the response has a 'candidates[0].text' field
     } catch (error) {
       console.error('Error communicating with Gemini AI:', error);
@@ -129,9 +115,8 @@ const Chatbot = () => {
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`mb-2 p-3 rounded-lg max-w-xs break-words ${
-                  message.sender === 'user' ? 'bg-blue-500 text-white self-end' : 'bg-gray-200 text-black self-start'
-                }`}
+                className={`mb-2 p-3 rounded-lg max-w-xs break-words ${message.sender === 'user' ? 'bg-blue-500 text-white self-end' : 'bg-gray-200 text-black self-start'
+                  }`}
                 style={{ wordWrap: 'break-word' }}
               >
                 {message.text}
