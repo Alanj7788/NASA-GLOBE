@@ -1,0 +1,21 @@
+def gcd(a, b):
+    # Base case: if b is 0, gcd is a
+    if b == 0:
+        return a
+    # Recursive case: call gcd with b and a % b
+    return gcd(b, a % b)
+
+# Input two numbers from the user
+num1 = int(input("Enter the first number: "))
+num2 = int(input("Enter the second number: "))
+
+# Calculate the GCD using recursion
+result = gcd(num1, num2)
+
+# Print the result
+print(f"The GCD of {num1} and {num2} is: {result}")
+
+#OUTPUT
+Enter the first number: 3
+Enter the second number: 9
+The GCD of 3 and 9 is: 3

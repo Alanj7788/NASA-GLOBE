@@ -1,0 +1,77 @@
+
+import React, { useEffect, useState } from 'react';
+import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
+import { TbPointer } from "react-icons/tb";
+
+const AlgorithmTable = ({ programs }) => {
+  const [codeContents, setCodeContents] = useState({});
+  const [visibleRows, setVisibleRows] = useState({});
+
+  useEffect(() => {
+    const fetchCode = async () => {
+      try {
+        const contents = await Promise.all(programs.map(async (program) => {
+          const response = await fetch(program.file);
+          const text = await response.text();
+          return { id: program.id, text };
+        }));
+
+        const initialContents = contents.reduce((acc, { id, text }) => {
+          acc[id] = text;
+          return acc;
+        }, {});
+        setCodeContents(initialContents);
+      } catch (err) {
+        console.error('Error fetching code:', err);
+      }
+    };
+    fetchCode();
+  }, [programs]);
+
+  const toggleContentVisibility = (id) => {
+    setVisibleRows(prevState => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
+
+  return (
+    <div className="overflow-x-auto">
+      <Table striped>
+        <TableHead>
+        <TableHeadCell>Programs</TableHeadCell>
+          <TableHeadCell>Algorithms</TableHeadCell>
+        </TableHead>
+
+        <TableBody className="divide-y">
+          {programs.map((program) => (
+            <TableRow key={program.id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
+              <TableCell className="whitespace-wrap font-medium text-gray-900 dark:text-white">
+                {program.title}
+              </TableCell>
+              <TableCell>
+                <div>
+                  <button
+                    onClick={() => toggleContentVisibility(program.id)}
+                    className="flex items-center font-medium text-cyan-600 hover:underline dark:text-cyan-500"
+                  >
+                    {visibleRows[program.id] ? 'Hide' : 'Preview'}
+                    <TbPointer className="ml-1" />
+                  </button>
+
+                  {visibleRows[program.id] && (
+                    <pre className="mt-2 p-2 border rounded bg-gray-100">
+                      {codeContents[program.id]}
+                    </pre>
+                  )}
+                </div>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  );
+};
+
+export default AlgorithmTable;

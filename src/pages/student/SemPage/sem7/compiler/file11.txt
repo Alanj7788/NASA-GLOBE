@@ -1,0 +1,19 @@
+%{
+int li=0;
+int ch=0;
+int w=0;
+%}
+%%
+[a-zA-Z] {ch++;}
+" " {w++;}
+"\n" {w++;li++;}
+%%
+int main(){
+yyin=fopen("input.txt","r");
+yylex();
+printf("number of characters:%d    number of words:%d  number of lines:%d",ch,w,li);
+}
+int yywrap()
+{
+return 1;
+}

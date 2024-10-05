@@ -1,0 +1,31 @@
+%{
+#include <stdio.h>
+#include <stdlib.h>
+int num;
+%}
+%%
+[0-9]+ {
+    // Convert the matched text to an integer
+    num = atoi(yytext);
+
+    // Reverse the number
+    int reversed = 0;
+    int temp = num;
+    while (temp > 0) {
+        int digit = temp % 10;
+        reversed = reversed * 10 + digit;
+        temp = temp / 10;
+    }
+
+    // Print the reversed number
+    printf("Reversed number of %d is %d\n", num, reversed);
+}
+%%
+int main() {
+    printf("Enter a number: ");
+    yylex(); // Process the input
+    return 0;
+}
+int yywrap() {
+    return 1;
+}

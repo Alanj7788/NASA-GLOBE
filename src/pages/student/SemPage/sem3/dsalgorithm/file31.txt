@@ -1,0 +1,53 @@
+### **AIM:**
+To implement heap sort to sort an array of integers.
+
+### **DATA Structures Used:**
+- **Array**: Used to store the elements to be sorted and to represent the heap.
+
+### **Algorithm:**
+
+#### 1. **Function: `void printArray(int A[], int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** Iterate through the array from index `0` to `n-1`:
+     - a. Print each element followed by a space.
+   - **Step 3:** End.
+
+#### 2. **Function: `void heapify(int A[], int n, int i)`**
+   - **Step 1:** Start.
+   - **Step 2:** Initialize `largest` as `i`, `left` as `2*i + 1`, and `right` as `2*i + 2`.
+   - **Step 3:** Check if the left child exists and is greater than the current largest:
+     - a. If true, set `largest` to `left`.
+   - **Step 4:** Check if the right child exists and is greater than the current largest:
+     - a. If true, set `largest` to `right`.
+   - **Step 5:** If `largest` is not `i`:
+     - a. Swap the element at `i` with the element at `largest`.
+     - b. Recursively call `heapify` for the subtree rooted at `largest`.
+   - **Step 6:** End.
+
+#### 3. **Function: `void BuildMaxHeap(int A[], int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** Iterate from the last non-leaf node `(n/2 - 1)` to the root:
+     - a. Call `heapify` for each node to ensure the heap property.
+   - **Step 3:** End.
+
+#### 4. **Function: `void heapSort(int A[], int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** Call `BuildMaxHeap` to construct a max heap from the array.
+   - **Step 3:** Iterate from the end of the array to the beginning:
+     - a. Swap the root of the heap (largest element) with the last element in the heap.
+     - b. Call `heapify` to restore the heap property for the reduced heap.
+   - **Step 4:** End.
+
+#### 5. **Function: `void main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Declare an integer array `A[50]` and integer variables `n` and `i`.
+   - **Step 3:** Prompt the user to enter the number of elements and read it into `n`.
+   - **Step 4:** Prompt the user to enter `n` elements and read them into the array `A[]`.
+   - **Step 5:** Print the array elements before sorting by calling `printArray`.
+   - **Step 6:** Call `heapSort` to sort the array.
+   - **Step 7:** Print the sorted array elements by calling `printArray`.
+   - **Step 8:** End.
+
+### **Result:**
+The program successfully implements heap sort to sort an array of integers. The output demonstrates the array elements before and after sorting. For example:
+

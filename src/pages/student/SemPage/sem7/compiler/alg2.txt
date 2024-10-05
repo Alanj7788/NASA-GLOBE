@@ -1,0 +1,13 @@
+AIM::Lex program to identify and count positive and negative numbers.
+
+Algorithm::
+Start
+    - Declaration of variables
+    - Rules for identifying the negative and positive number and printing the text.
+    - Take the input from the user
+    - Print the total number of negative and positive number.
+Stop
+
+Result::
+Implemented lex program to identify and count positive and negative numbers.
+

@@ -1,0 +1,18 @@
+**AIM:**  
+To display the current date and time in various formats.
+
+**ALGORITHM:**  
+1. Get the current date and time.
+2. Print the current date and time.
+3. Display the date in different formats:
+   - YYYY-MM-DD
+   - DD-MM-YYYY
+   - MM/DD/YYYY
+4. Display the time in different formats:
+   - 24-Hour Time
+   - 12-Hour Time
+5. Print the full date and time with day name.
+6. Print a custom format of date and time.
+
+**RESULT:**  
+Implemented a program that displays the current date and time in multiple formats, including standard and custom formats.

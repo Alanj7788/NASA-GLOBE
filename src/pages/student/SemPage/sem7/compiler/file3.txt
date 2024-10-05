@@ -1,0 +1,19 @@
+%{
+int a;
+int b;
+int sum;
+%}
+%%
+"\n" { sum = a + b; printf("sum=%d\n", sum); }
+%%
+int main(){
+    printf("Enter 1st no: ");
+    scanf("%d", &a);
+    printf("Enter 2nd no: ");
+    scanf("%d", &b);
+    yylex();
+    return 0;
+}
+int yywrap() {
+    return 0;
+}

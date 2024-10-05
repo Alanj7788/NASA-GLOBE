@@ -1,0 +1,31 @@
+Basic Structure of a Lex Program
+A Lex file typically has three sections separated by %%:
+
+Definitions Section: Define macros and import header files.
+Rules Section: Define regular expressions and corresponding actions.
+User Subroutines Section: Define auxiliary functions used in actions.
+
+%{
+/* Definitions Section */
+#include <stdio.h>
+%}
+%%
+/* Rules Section */
+[a-zA-Z]+    { printf("WORD: %s\n", yytext); }
+[0-9]+       { printf("NUMBER: %s\n", yytext); }
+[ \t\n]      ;  /* Ignore whitespace */
+.            { printf("UNKNOWN: %s\n", yytext); }
+%%
+/* User Subroutines Section */
+int main() {
+    yylex();
+    return 0;
+}
+
+
+Compile and Run a Lex Program::
+Save your Lex code to a file, e.g., example.l.
+lex example.l
+gcc lex.yy.c -lfl
+./a.out
+

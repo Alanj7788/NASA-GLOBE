@@ -1,0 +1,20 @@
+# Input the lengths of the three sides of the triangle
+side1 = float(input("Enter the length of the first side: "))
+side2 = float(input("Enter the length of the second side: "))
+side3 = float(input("Enter the length of the third side: "))
+
+# Function to check if the triangle is right-angled
+def is_right_angled(a, b, c):
+    return round(a**2 + b**2, 5) == round(c**2, 5)
+
+# Check for all combinations where one side is the hypotenuse
+if is_right_angled(side1, side2, side3) or is_right_angled(side1, side3, side2) or is_right_angled(side2, side3, side1):
+    print("The triangle is a right-angled triangle.")
+else:
+    print("The triangle is not a right-angled triangle.")
+
+#OUTPUT
+Enter the length of the first side: 3
+Enter the length of the second side: 4
+Enter the length of the third side: 5
+The triangle is a right-angled triangle.

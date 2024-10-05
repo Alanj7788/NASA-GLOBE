@@ -1,0 +1,29 @@
+# fibonacci.py (Make it as a python file)
+def fibonacci(n):
+    """Return the Fibonacci sequence up to the nth number."""
+    sequence = []
+    a, b = 0, 1
+    while len(sequence) < n:
+        sequence.append(a)
+        a, b = b, a + b
+    return sequence
+
+# test.py (This is another python file import the fibonnaci module here)
+
+# Import the fibonacci function from the fibonacci module
+from fibonacci import fibonacci
+
+# Input the number of terms in the Fibonacci sequence
+n = int(input("Enter the number of Fibonacci terms you want: "))
+
+# Get the Fibonacci sequence using the imported function
+fib_sequence = fibonacci(n)
+
+# Print the Fibonacci sequence
+print(f"The first {n} terms of the Fibonacci sequence are:")
+print(fib_sequence)
+
+#OUTPUT
+Enter the number of Fibonacci terms you want: 5
+The first 5 terms of the Fibonacci sequence are:
+[0, 1, 1, 2, 3]

@@ -1,0 +1,103 @@
+// components/ProgramTable.js
+import React, { useEffect, useState } from 'react';
+import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
+import { TbPointer } from "react-icons/tb";
+
+const ProgramTable = ({ programs }) => {
+  const [codeContents, setCodeContents] = useState({});
+  const [visibleRows, setVisibleRows] = useState({});
+  const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    const fetchCode = async () => {
+      try {
+        const contents = await Promise.all(programs.map(async (program) => {
+          const response = await fetch(program.file);
+          const text = await response.text();
+          return { id: program.id, text };
+        }));
+
+        const initialContents = contents.reduce((acc, { id, text }) => {
+          acc[id] = text;
+          return acc;
+        }, {});
+        setCodeContents(initialContents);
+      } catch (err) {
+        console.error('Error fetching code:', err);
+      }
+    };
+    fetchCode();
+  }, [programs]);
+
+  const toggleContentVisibility = (id) => {
+    setVisibleRows(prevState => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value.toLowerCase());
+  };
+
+  // Filter programs based on the search query
+  const filteredPrograms = programs.filter(program =>
+    program.title.toLowerCase().includes(searchQuery)
+  );
+
+  return (
+    <div className="overflow-x-auto">
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Search programs..."
+          value={searchQuery}
+          onChange={handleSearchChange}
+          className="p-2 border rounded w-full"
+        />
+      </div>
+      <Table striped>
+        <TableHead>
+          <TableHeadCell>Programs</TableHeadCell>
+          <TableHeadCell>Codes</TableHeadCell>
+        </TableHead>
+
+        <TableBody className="divide-y">
+          {filteredPrograms.length > 0 ? (
+            filteredPrograms.map((program) => (
+              <TableRow key={program.id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-wrap font-medium text-gray-900 dark:text-white">
+                  {program.title}
+                </TableCell>
+                <TableCell>
+                  <div>
+                    <button
+                      onClick={() => toggleContentVisibility(program.id)}
+                      className="flex items-center font-medium text-cyan-600 hover:underline dark:text-cyan-500"
+                    >
+                      {visibleRows[program.id] ? 'Hide' : 'Preview'}
+                      <TbPointer className="ml-1" />
+                    </button>
+                    {visibleRows[program.id] && (
+                      <pre className="mt-2 p-2 border rounded bg-gray-100">
+                        {codeContents[program.id]}
+                      </pre>
+                    )}
+                  </div>
+                </TableCell>
+              </TableRow>
+            ))
+          ) : (
+            <TableRow>
+              <TableCell colSpan={2} className="text-center text-gray-500">
+                No programs found
+              </TableCell>
+            </TableRow>
+          )}
+        </TableBody>
+      </Table>
+    </div>
+  );
+};
+
+export default ProgramTable;

@@ -1,0 +1,20 @@
+AIM:: To develop two Lex programs: one to count the number of lines, words, and characters from direct user input, and another to perform the same task using input from a file.
+
+Algorithm:
+
+1 a)
+Start
+    - Declaration of variables
+    - Writing the rules for identifying the words, lines, characters, and incrementing the variables
+    - Take the input from the user
+    - Output the result
+
+1 b)
+Start
+    - Declaration of variables
+    - Take the input
+    - Apply the rules for identifying words, lines, characters, and incrementing variables
+    - Output the result
+
+Result::
+Successfully implemented the program to count number of words, lines and characters from user input and from file.

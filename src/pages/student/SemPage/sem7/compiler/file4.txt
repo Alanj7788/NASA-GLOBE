@@ -1,0 +1,18 @@
+%{
+int ne=0;
+int po=0;
+%}
+%%
+[-][0-9]+ {ne++; printf("Negative no=%s\n",yytext);}
+[0-9]+ {po++; printf("Positive no=%s\n",yytext);}
+end {printf("Number of Positive Numbers:%d    Number of Negative Numbers:%d",po,ne);}
+%%
+int main(){
+printf("Enter numbers:");
+yylex();
+return 0;
+}
+int yywrap()
+{
+return 0;
+}

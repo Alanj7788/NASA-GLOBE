@@ -1,0 +1,66 @@
+def play_sticks_game():
+    sticks = 5
+    current_player = 1  # Player 1 starts
+
+    print("Welcome to the Sticks Game!")
+    print("There are 16 sticks.")
+    print("Each player can take 1, 2, or 3 sticks per turn.")
+    print("The player who takes the last stick loses.\n")
+
+    while sticks > 0:
+        print(f"Sticks remaining: {sticks}")
+        print(f"Player {current_player}'s turn.")
+        
+        # Input validation
+        try:
+            take = int(input("Enter the number of sticks to take (1, 2, or 3): "))
+            if take not in [1, 2, 3]:
+                print("Invalid number of sticks. You can only take 1, 2, or 3 sticks.")
+                continue
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+        
+        if take > sticks:
+            print(f"Cannot take more sticks than remaining ({sticks}). Try again.")
+            continue
+        
+        # Update the number of sticks
+        sticks -= take
+        
+        # Check if the game is over
+        if sticks == 0:
+            print(f"Sticks remaining: {sticks}")
+            print(f"Player {current_player} took the last stick and loses!")
+            break
+        
+        # Switch players
+        current_player = 2 if current_player == 1 else 1
+
+# Run the game
+play_sticks_game()
+
+#OUTPUT
+Welcome to the Sticks Game!
+There are 16 sticks.
+Each player can take 1, 2, or 3 sticks per turn.
+The player who takes the last stick loses.
+
+Sticks remaining: 5
+Player 1's turn.
+Enter the number of sticks to take (1, 2, or 3): 2
+Sticks remaining: 3
+Player 2's turn.
+Enter the number of sticks to take (1, 2, or 3): 1
+Sticks remaining: 2
+Player 1's turn.
+Enter the number of sticks to take (1, 2, or 3): 3
+Cannot take more sticks than remaining (2). Try again.
+Sticks remaining: 2
+Player 1's turn.
+Enter the number of sticks to take (1, 2, or 3): 1
+Sticks remaining: 1
+Player 2's turn.
+Enter the number of sticks to take (1, 2, or 3): 1
+Sticks remaining: 0
+Player 2 took the last stick and loses!

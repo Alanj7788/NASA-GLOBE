@@ -1,0 +1,13 @@
+%{
+char n[1];
+%}
+%%
+[ \n\t] {}
+%%
+int main(){
+    yyin=fopen("input.txt","r");
+    yylex();
+}
+int yywrap() {
+    return 1;
+}

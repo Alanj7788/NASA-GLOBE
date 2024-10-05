@@ -1,0 +1,13 @@
+**AIM:**  
+To create, append, and remove elements from a list using NumPy.
+
+**ALGORITHM:**  
+1. Create a NumPy array.
+2. Print the original array.
+3. Append elements to the array.
+4. Print the array after appending elements.
+5. Remove elements from the array by index.
+6. Print the array after removing elements.
+
+**RESULT:**  
+Implemented a program to create a NumPy array, append new elements, and remove elements at specified indices.

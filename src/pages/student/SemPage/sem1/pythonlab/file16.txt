@@ -1,0 +1,31 @@
+# Function to input a list from the user
+def input_list(prompt):
+    return [int(x) for x in input(prompt).split()]
+
+# Input two lists from the user
+list1 = input_list("Enter the first list of numbers (space-separated): ")
+list2 = input_list("Enter the second list of numbers (space-separated): ")
+
+# Merge the two lists
+merged_list = list1 + list2
+
+# Separate even and odd numbers using list comprehension
+even_numbers = [num for num in merged_list if num % 2 == 0]
+odd_numbers = [num for num in merged_list if num % 2 != 0]
+
+# Sort the even and odd numbers
+even_numbers.sort()
+odd_numbers.sort()
+
+# Combine the sorted even and odd numbers
+sorted_merged_list = even_numbers + odd_numbers
+
+# Print the result
+print("Merged list with even numbers first and odd numbers second:")
+print(sorted_merged_list)
+
+#OUTPUT
+Enter the first list of numbers (space-separated): 1 4 2 6 5 3 9
+Enter the second list of numbers (space-separated): 3 5 1 7 6 8
+Merged list with even numbers first and odd numbers second:
+[2, 4, 6, 6, 8, 1, 1, 3, 3, 5, 5, 7, 9]

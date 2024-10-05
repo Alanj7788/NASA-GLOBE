@@ -1,0 +1,51 @@
+### **AIM:**
+To implement basic operations for a circular linked list.
+
+### **DATA Structures Used:**
+- **Circular Linked List:** A list where the last node points to the first node, forming a circle.
+- **Node Structure (`struct node`):**
+  - `int data`: Stores data of the node.
+  - `struct node *next`: Pointer to the next node in the list.
+
+### **Algorithm:**
+
+#### 1. **Function: `void beginsert()`**
+   - **Step 1:** Allocate memory for a new node.
+   - **Step 2:** Check if memory allocation was successful.
+   - **Step 3:** Read data for the new node.
+   - **Step 4:** If the list is empty, set the new node as the head and point its next to itself.
+   - **Step 5:** Otherwise, traverse to the end of the list and insert the new node at the beginning.
+   - **Step 6:** Set the new node's `next` to `head` and update the previous end node's `next` to the new node.
+   - **Step 7:** Update `head` to the new node.
+
+#### 2. **Function: `void lastinsert()`**
+   - **Step 1:** Allocate memory for a new node.
+   - **Step 2:** Check if memory allocation was successful.
+   - **Step 3:** Read data for the new node.
+   - **Step 4:** If the list is empty, set the new node as the head and point its next to itself.
+   - **Step 5:** Otherwise, traverse to the end of the list and insert the new node at the end.
+   - **Step 6:** Set the new node's `next` to `head`.
+
+#### 3. **Function: `void begin_delete()`**
+   - **Step 1:** Check if the list is empty.
+   - **Step 2:** If the list has only one node, free the node and set `head` to NULL.
+   - **Step 3:** Otherwise, traverse to the end of the list, adjust the `next` pointer to bypass the head, free the head node, and update `head` to the next node.
+
+#### 4. **Function: `void last_delete()`**
+   - **Step 1:** Check if the list is empty.
+   - **Step 2:** If the list has only one node, free the node and set `head` to NULL.
+   - **Step 3:** Otherwise, traverse to the end of the list, adjust the `next` pointer of the previous node to bypass the last node, and free the last node.
+
+#### 5. **Function: `void search()`**
+   - **Step 1:** Check if the list is empty.
+   - **Step 2:** Traverse the list while comparing each node's data with the search item.
+   - **Step 3:** If a match is found, print the position of the item.
+   - **Step 4:** If the item is not found after a full traversal, print "Item not found."
+
+#### 6. **Function: `void display()`**
+   - **Step 1:** Check if the list is empty.
+   - **Step 2:** Traverse the list and print each node's data.
+   - **Step 3:** Stop when the traversal returns to the head.
+
+### **Result:**
+The program allows for circular linked list operations including insertion at the beginning and end, deletion from the beginning and end, searching for an element, and displaying the list. It handles edge cases like empty lists and single-node lists.

@@ -1,0 +1,13 @@
+AIM::Lex program to remove newline, tab, spaces.
+
+Algorithm::
+Start
+    - Declaration of variables
+    - Rules for removing newline, tab, and spaces.
+    - Take the input string from the user
+    - Print the string after the operation.
+Stop
+
+Result::
+Implemented lex program to remove newline, tab, spaces.
+

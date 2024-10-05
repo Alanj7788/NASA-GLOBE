@@ -1,0 +1,35 @@
+### **AIM:**
+To implement a stack Abstract Data Type (ADT) using arrays.
+
+### **DATA Structures Used:**
+- **Array:** To store stack elements.
+
+
+### **Algorithm:**
+
+#### 1. **Function: `void push()`**
+   - **Step 1:** Check if `top` is greater than or equal to `n-1` (stack overflow):
+     - a. Print "STACK is overflow".
+   - **Step 2:** Otherwise, read a value from the user and push it onto the stack.
+   - **Step 3:** Increment `top`.
+
+#### 2. **Function: `void pop()`**
+   - **Step 1:** Check if `top` is less than 0 (stack underflow):
+     - a. Print "STACK is underflow".
+   - **Step 2:** Otherwise, print the top element and decrement `top`.
+
+#### 3. **Function: `void display()`**
+   - **Step 1:** Check if `top` is greater than or equal to 0:
+     - a. Print elements from top to bottom.
+   - **Step 2:** Otherwise, print "STACK is empty".
+
+#### 4. **Function: `int main()`**
+   - **Step 1:** Initialize `top` to -1.
+   - **Step 2:** Read the maximum size of the stack.
+   - **Step 3:** Display the menu and prompt the user for choices.
+   - **Step 4:** Perform operations based on user choice until exit.
+
+---
+
+### **Result:**
+The program allows for stack operations including push, pop, and display using array-based implementation. It handles stack overflow and underflow conditions and shows the elements currently in the stack.

@@ -1,0 +1,12 @@
+n=input("Enter the number: ")
+if n[0]=='9' or n[0]=='7' or n[0]=='8':
+  if len(n)==10:
+    print("Valid mobile number")
+  else:
+    print("Invalid mobile number")
+else:
+  print("Invalid mobile number")
+
+#OUTPUT
+Enter the number: 8549623567
+Valid mobile number

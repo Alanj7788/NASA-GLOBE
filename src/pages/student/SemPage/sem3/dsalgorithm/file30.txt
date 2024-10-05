@@ -1,0 +1,37 @@
+### **AIM:**
+To implement a binary tree using linked lists and perform an in-order traversal to display the tree elements.
+
+### **DATA Structures Used:**
+- **Linked List**: The binary tree is represented using linked lists, where each node contains data and pointers to its left and right children.
+
+### **Algorithm:**
+
+#### 1. **Function: `void buildtree(struct tree *ptr)`**
+   - **Step 1:** Start.
+   - **Step 2:** Check if `ptr` is not `NULL`:
+     - a. Prompt the user to enter the data for the current node and assign it to `ptr->data`.
+     - b. Set `ptr->lc` and `ptr->rc` to `NULL` (initially, the node has no children).
+     - c. Prompt the user to decide if they want to create a left child for the current node:
+       - i. If `1`, allocate memory for the left child node (`lcptr`), set `ptr->lc` to `lcptr`, and recursively call `buildtree(lcptr)` to build the left subtree.
+     - d. Prompt the user to decide if they want to create a right child for the current node:
+       - i. If `1`, allocate memory for the right child node (`rcptr`), set `ptr->rc` to `rcptr`, and recursively call `buildtree(rcptr)` to build the right subtree.
+   - **Step 3:** End.
+
+#### 2. **Function: `void inorder(struct tree *ptr)`**
+   - **Step 1:** Start.
+   - **Step 2:** Check if `ptr` is not `NULL`:
+     - a. Recursively call `inorder(ptr->lc)` to traverse the left subtree.
+     - b. Print the data of the current node (`ptr->data`).
+     - c. Recursively call `inorder(ptr->rc)` to traverse the right subtree.
+   - **Step 3:** End.
+
+#### 3. **Function: `int main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Allocate memory for the root node (`root`) of the tree.
+   - **Step 3:** Call `buildtree(root)` to construct the binary tree starting from the root node.
+   - **Step 4:** Print a message indicating that the binary tree is being displayed.
+   - **Step 5:** Call `inorder(root)` to perform an in-order traversal and display the tree elements.
+   - **Step 6:** End.
+
+### **Result:**
+The program successfully builds a binary tree using linked lists based on user input and performs an in-order traversal to display the elements of the tree in ascending order. The example output demonstrates the tree structure constructed from user inputs and the in-order traversal result.

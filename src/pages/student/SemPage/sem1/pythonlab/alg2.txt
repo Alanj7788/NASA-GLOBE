@@ -1,0 +1,13 @@
+**AIM:**  
+To create, concatenate, and access substrings of a given string.
+
+**ALGORITHM:**  
+1. Prompt the user to enter a string and print it.
+2. Concatenate the user-provided string with another string.
+3. Print the concatenated string.
+4. Extract a substring from the user-provided string using slicing.
+5. Print the substring.
+
+**RESULT:**  
+Implemented a program to create a string, concatenate it with another string, and extract a substring from the original string.
+

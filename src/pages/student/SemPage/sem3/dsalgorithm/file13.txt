@@ -1,0 +1,26 @@
+### **AIM:**
+To reverse a string using a stack data structure.
+
+### **DATA Structures Used:**
+- **Array (`stack[max]`):** To hold the characters of the string.
+
+### **Algorithm:**
+
+#### 1. **Function: `void push(char x)`**
+   - **Step 1:** Check if `top` is at the maximum stack size (`max-1`):
+     - a. Print "stack overflow".
+   - **Step 2:** Otherwise, increment `top` and push the character `x` onto the stack.
+
+#### 2. **Function: `void pop()`**
+   - **Step 1:** Print the character at `stack[top]`.
+   - **Step 2:** Decrement `top`.
+
+#### 3. **Function: `int main()`**
+   - **Step 1:** Read the input string into `str`.
+   - **Step 2:** Push each character of the string onto the stack.
+   - **Step 3:** Pop and print each character from the stack to reverse the string.
+
+---
+
+### **Result:**
+The program successfully reverses the input string using a stack. For example, input "computer science" results in "ecneics retupmoc".

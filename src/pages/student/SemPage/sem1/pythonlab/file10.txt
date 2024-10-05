@@ -1,0 +1,21 @@
+def recursive_addition(a, b):
+    # Base case: if b is 0, return a
+    if b == 0:
+        return a
+    # Recursive case: increment a by 1 and decrement b by 1
+    return recursive_addition(a + 1, b - 1)
+
+# Input two positive numbers from the user
+num1 = int(input("Enter the first positive number: "))
+num2 = int(input("Enter the second positive number: "))
+
+# Perform addition using recursion
+result = recursive_addition(num1, num2)
+
+# Print the result
+print(f"The sum of {num1} and {num2} is: {result}")
+
+#OUTPUT
+Enter the first positive number: 5
+Enter the second positive number: 10
+The sum of 5 and 10 is: 15

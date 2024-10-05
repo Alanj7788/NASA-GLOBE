@@ -1,0 +1,48 @@
+
+### **AIM:**
+To implement a program that performs quicksort on an array.
+
+### **DATA Structures Used:**
+- **Array**
+
+### **Algorithm:**
+
+#### 1. **Function: `void quicksort(int a[], int first, int last)`**
+   - **Step 1:** Start.
+   - **Step 2:** If `first < last`:
+     - a. Set `pivot = first`.
+     - b. Initialize `i = first` and `j = last`.
+     - c. While `i < j`:
+       - i. Increment `i` until `a[i] > a[pivot]` or `i == last`.
+       - ii. Decrement `j` until `a[j] <= a[pivot]`.
+       - iii. If `i < j`, swap `a[i]` and `a[j]`.
+     - d. After the loop, swap `a[pivot]` with `a[j]`.
+     - e. Recursively call `quicksort(a, first, j-1)` for the left partition.
+     - f. Recursively call `quicksort(a, j+1, last)` for the right partition.
+   - **Step 3:** End.
+
+#### 2. **Function: `void read(int a[], int count)`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `0` to `count-1`:
+     - a. Read the element and store it in `a[i]`.
+   - **Step 3:** End.
+
+#### 3. **Function: `void display(int a[], int count)`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `0` to `count-1`:
+     - a. Print the element `a[i]` followed by a space.
+   - **Step 3:** End.
+
+#### 4. **Function: `int main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Declare an integer array `a[25]` and integer variables `i` and `count`.
+   - **Step 3:** Prompt the user to enter the number of elements (`count`) and read it.
+   - **Step 4:** Prompt the user to enter `count` elements and read them into the array `a[]` using `read(a, count)`.
+   - **Step 5:** Call `quicksort(a, 0, count-1)` to sort the array using quicksort.
+   - **Step 6:** Display the sorted array by calling `display(a, count)`.
+   - **Step 7:** End.
+
+---
+
+### **Result:**
+The program successfully implements quicksort, sorting the array in ascending order.

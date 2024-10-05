@@ -1,0 +1,27 @@
+Certainly! Here's a structured breakdown of the hash table program:
+
+### **Aim**
+To implement a simple hash table using a basic hash function \( H(k) = k \% 10 \), with operations for inserting, deleting, and displaying key-value pairs.
+
+### **Algorithm**
+
+1. **Initialization:**
+   - Define a `struct` to store the key and data.
+   - Initialize an array `A` of size 10 with all values set to -1, representing an empty hash table.
+
+2. **Insert Operation:**
+   - Compute the index using the hash function: `index = key % size`.
+   - Check if the position at the computed index is empty (i.e., `data == -1`).
+     - If empty, insert the key-value pair.
+     - If not, report a collision.
+
+3. **Delete Operation:**
+   - Compute the index using the hash function: `index = key % size`.
+   - Check if the key exists at the computed index.
+     - If it exists, remove the key-value pair by setting `key` and `data` to -1.
+     - If not, report that the key does not exist.
+
+4. **Display Operation:**
+   - Iterate through the array and display the key-value pairs. If a position is empty, indicate it with `/`.
+
+### **Result**

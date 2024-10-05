@@ -1,0 +1,25 @@
+import numpy as np
+# Creating a list
+my_list = np.array([1, 2, 3, 4, 5])
+print("Original List:", my_list)
+
+# Appending elements
+my_list = np.append(my_list, 6)
+print("List after appending 6:", my_list)
+
+my_list = np.append(my_list, [7, 8, 9])
+print("List after appending [7, 8, 9]:", my_list)
+
+# Removing elements
+my_list = np.delete(my_list, 2)  # Removing element at index 2
+print("List after removing element at index 2:", my_list)
+
+my_list = np.delete(my_list, [0, 3])  # Removing elements at index 0 and 3
+print("List after removing elements at index 0 and 3:", my_list)
+
+#OUTPUT
+Original List: [1 2 3 4 5]
+List after appending 6: [1 2 3 4 5 6]
+List after appending [7, 8, 9]: [1 2 3 4 5 6 7 8 9]
+List after removing element at index 2: [1 2 4 5 6 7 8 9]
+List after removing elements at index 0 and 3: [2 4 6 7 8 9]

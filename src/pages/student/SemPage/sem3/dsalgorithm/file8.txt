@@ -1,0 +1,57 @@
+
+### **AIM:**
+To implement a program that adds two polynomials using arrays and structures.
+
+### **DATA Structures Used:**
+Structure
+Array
+
+
+### **Algorithm:**
+
+#### 1. **Function: `int readpoly(struct poly p[])`**
+   - **Step 1:** Start.
+   - **Step 2:** Read the number of terms in the polynomial.
+   - **Step 3:** For each term, read the coefficient and exponent.
+   - **Step 4:** Store these values in the corresponding array of structures.
+   - **Step 5:** Return the number of terms.
+
+#### 2. **Function: `void displaypoly(struct poly p[], int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** For each term in the polynomial array:
+     - a. Print the term in the format `coef(x^expo)` followed by a plus sign if it's not the last term.
+   - **Step 3:** End.
+
+#### 3. **Function: `int addpoly(struct poly p1[10], struct poly p2[10], int t1, int t2, struct poly p3[10])`**
+   - **Step 1:** Start.
+   - **Step 2:** Initialize three counters `i`, `j`, and `k` to `0`. These will track the position in the first, second, and resultant polynomial arrays, respectively.
+   - **Step 3:** While both polynomials have terms left to compare:
+     - a. If the exponents of the current terms are equal:
+       - Add the coefficients.
+       - Store the result in the resultant polynomial.
+       - Move to the next term in both polynomials.
+     - b. If the exponent of the first polynomial term is greater:
+       - Copy the term from the first polynomial to the resultant polynomial.
+       - Move to the next term in the first polynomial.
+     - c. Otherwise, copy the term from the second polynomial to the resultant polynomial.
+       - Move to the next term in the second polynomial.
+   - **Step 4:** If there are any remaining terms in the first polynomial, copy them to the resultant polynomial.
+   - **Step 5:** If there are any remaining terms in the second polynomial, copy them to the resultant polynomial.
+   - **Step 6:** Return the number of terms in the resultant polynomial.
+   - **Step 7:** End.
+
+#### 4. **Function: `int main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Read the first polynomial using `readpoly(p1)`.
+   - **Step 3:** Display the first polynomial using `displaypoly(p1, t1)`.
+   - **Step 4:** Read the second polynomial using `readpoly(p2)`.
+   - **Step 5:** Display the second polynomial using `displaypoly(p2, t2)`.
+   - **Step 6:** Add the two polynomials using `addpoly(p1, p2, t1, t2, p3)`.
+   - **Step 7:** Display the resultant polynomial using `displaypoly(p3, t3)`.
+   - **Step 8:** End.
+
+---
+
+### **Result:**
+The program successfully reads two polynomials, adds them, and displays the resultant polynomial.
+

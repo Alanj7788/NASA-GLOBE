@@ -1,0 +1,56 @@
+### **Aim:**
+To implement a double-ended queue (deque) using arrays, allowing insertion and deletion of elements from both ends of the queue.
+
+### **Data Structures Used:**
+- **Array (`a[20]`):** To store the elements of the deque.
+
+### **Algorithm:**
+
+#### 1. **Function: `void push(int item)`**
+   - **Step 1:** Check if the deque is full (`front == 0 && rear == size - 1`):
+     - If full, print an error message.
+   - **Step 2:** If the deque is empty (`rear == -1`), initialize `front` and `rear` to `0`, and insert the item at `front`.
+   - **Step 3:** If `front` is greater than `0`, decrease `front` and insert the item.
+   - **Step 4:** If `front` is not greater than `0`, shift elements from `rear` to `front`, then insert the item at `front` and increase `rear`.
+
+#### 2. **Function: `void inject(int item)`**
+   - **Step 1:** Check if the deque is full (`front == 0 && rear == size - 1`):
+     - If full, print an error message.
+   - **Step 2:** If the deque is empty (`rear == -1`), initialize `front` and `rear` to `0`, and insert the item at `rear`.
+   - **Step 3:** If `rear` is less than `size - 1`, increase `rear` and insert the item.
+   - **Step 4:** If `rear` is not less than `size - 1`, shift elements from `front` to `rear`, then insert the item at `rear` and decrease `front`.
+
+#### 3. **Function: `void reject()`**
+   - **Step 1:** Check if the deque is empty (`front == -1`):
+     - If empty, print an error message.
+   - **Step 2:** If `front` is equal to `rear`, print the item at `rear`, and reset `front` and `rear` to `-1`.
+   - **Step 3:** Otherwise, print the item at `rear` and decrease `rear`.
+
+#### 4. **Function: `void pop()`**
+   - **Step 1:** Check if the deque is empty (`front == -1`):
+     - If empty, print an error message.
+   - **Step 2:** If `front` is equal to `rear`, print the item at `front`, and reset `front` and `rear` to `-1`.
+   - **Step 3:** Otherwise, print the item at `front` and increase `front`.
+
+#### 5. **Function: `void display()`**
+   - **Step 1:** Check if the deque is empty (`front == -1`):
+     - If empty, print an error message.
+   - **Step 2:** If `front` is less than or equal to `rear`, print elements from `front` to `rear`.
+   - **Step 3:** If `front` is greater than `rear`, print elements from `front` to the end of the array, then from the start of the array to `rear`.
+
+#### 6. **Main Function (`int main()`)**
+   - **Step 1:** Initialize `front` and `rear` to `-1`.
+   - **Step 2:** Read the size of the deque from the user.
+   - **Step 3:** Present a menu for deque operations:
+     - `1`: Push an item to the front.
+     - `2`: Pop an item from the front.
+     - `3`: Inject an item to the rear.
+     - `4`: Reject an item from the rear.
+     - `5`: Display the deque.
+     - `6`: Exit the program.
+   - **Step 4:** Perform the chosen operation until the user selects to exit.
+
+---
+
+### **Result:**
+The program effectively manages a double-ended queue with operations to push and inject elements from both ends, as well as pop and reject elements. It demonstrates correct handling of full and empty conditions, as shown in the example output.

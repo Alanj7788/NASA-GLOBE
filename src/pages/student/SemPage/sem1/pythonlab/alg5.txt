@@ -1,0 +1,11 @@
+
+**AIM:**  
+To find the largest of three numbers provided by the user.
+
+**ALGORITHM:**  
+1. Input three numbers from the user.
+2. Compare the numbers to find the largest.
+3. Print the largest number.
+
+**RESULT:**  
+Implemented a program to determine and print the largest of three user-provided numbers.

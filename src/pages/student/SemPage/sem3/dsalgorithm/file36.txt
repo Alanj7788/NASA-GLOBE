@@ -1,0 +1,59 @@
+### **AIM:**
+To implement Depth-First Search (DFS) and Breadth-First Search (BFS) algorithms on an undirected connected graph.
+
+### **DATA Structures Used:**
+- **Adjacency Matrix:** To represent the graph.
+- **Queue:** To support BFS traversal.
+
+### **Algorithm:**
+
+#### 1. **Function: `void DFS(int i)`**
+   - **Step 1:** Mark the vertex `i` as visited by setting `visited[i] = 1`.
+   - **Step 2:** Print the vertex `i`.
+   - **Step 3:** For each vertex `j` from `1` to `V`:
+     - a. If there is an edge from `i` to `j` (`G[i][j] == 1`) and `j` is not visited (`visited[j] == 0`), recursively call `DFS(j)`.
+   - **Step 4:** End.
+
+#### 2. **Function: `void enqueue(int item)`**
+   - **Step 1:** If the queue is empty (`front == -1` and `rear == -1`):
+     - a. Set both `front` and `rear` to `0` and add the item to `Q[rear]`.
+   - **Step 2:** End.
+
+#### 3. **Function: `int dequeue()`**
+   - **Step 1:** If the queue is empty (`front == -1` and `rear == -1`), return `-1`.
+   - **Step 2:** If the queue has only one item (`front == rear`):
+     - a. Remove and return the item at `Q[front]`.
+     - b. Reset `front` and `rear` to `-1`.
+   - **Step 3:** Otherwise:
+     - a. Remove and return the item at `Q[front]` and increment `front`.
+   - **Step 4:** End.
+
+#### 4. **Function: `void BFS(int s)`**
+   - **Step 1:** Mark the vertex `s` as visited by setting `visited[s] = 1`.
+   - **Step 2:** Print the vertex `s`.
+   - **Step 3:** Enqueue vertex `s`.
+   - **Step 4:** While the queue is not empty (`front != -1`):
+     - a. Dequeue a vertex `s`.
+     - b. For each vertex `i` from `1` to `V`:
+       - i. If there is an edge from `s` to `i` (`G[s][i] == 1`) and `i` is not visited (`visited[i] == 0`):
+         - a. Print vertex `i`.
+         - b. Mark `i` as visited and enqueue `i`.
+   - **Step 5:** End.
+
+#### 5. **Function: `int main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Declare integer variables `i`, `j`, `v1`, `v2` and initialize the adjacency matrix `G` to zeros.
+   - **Step 3:** Prompt the user to enter the number of vertices (`V`) and the number of edges (`E`).
+   - **Step 4:** For each edge:
+     - a. Read the vertices `v1` and `v2`.
+     - b. Set `G[v1][v2]` and `G[v2][v1]` to `1` to indicate an edge.
+   - **Step 5:** Print the adjacency matrix.
+   - **Step 6:** Initialize the `visited` array to zeros.
+   - **Step 7:** Prompt the user to enter the source vertex.
+   - **Step 8:** Call `DFS(source)` to perform DFS traversal starting from the source vertex.
+   - **Step 9:** Reset the `visited` array to zeros.
+   - **Step 10:** Call `BFS(source)` to perform BFS traversal starting from the source vertex.
+   - **Step 11:** End.
+
+### **Result:**
+The program successfully implements both Depth-First Search (DFS) and Breadth-First Search (BFS) algorithms on an undirected connected graph. The adjacency matrix of the graph is displayed, followed by the DFS and BFS traversals starting from the user-specified source vertex.

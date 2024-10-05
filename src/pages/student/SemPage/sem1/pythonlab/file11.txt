@@ -1,0 +1,21 @@
+def recursive_multiplication(a, b):
+    # Base case: if b is 0, the result is 0
+    if b == 0:
+        return 0
+    # Recursive case: add a to the result of a multiplied by (b - 1)
+    return a + recursive_multiplication(a, b - 1)
+
+# Input two positive numbers from the user
+num1 = int(input("Enter the first positive number: "))
+num2 = int(input("Enter the second positive number: "))
+
+# Perform multiplication using recursion
+result = recursive_multiplication(num1, num2)
+
+# Print the result
+print(f"The product of {num1} and {num2} is: {result}")
+
+#OUTPUT
+Enter the first positive number: 4
+Enter the second positive number: 9
+The product of 4 and 9 is: 36

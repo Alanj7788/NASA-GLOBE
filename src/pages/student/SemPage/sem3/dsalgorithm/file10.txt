@@ -1,0 +1,56 @@
+### **AIM:**
+To implement a program that performs addition of two sparse matrices and displays the resultant sparse matrix.
+
+### **Algorithm:**
+
+#### 1. **Function: `void read(int a[10][10], int m, int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `0` to `m-1` and each index `j` from `0` to `n-1`:
+     - a. Read the element and store it in `a[i][j]`.
+   - **Step 3:** End.
+
+#### 2. **Function: `void sparse(int a[10][10], int m, int n, int s[100][3])`**
+   - **Step 1:** Start.
+   - **Step 2:** Initialize `k = 1` and set `s[0][0] = m` and `s[0][1] = n`.
+   - **Step 3:** For each index `i` from `0` to `m-1` and each index `j` from `0` to `n-1`:
+     - a. If `a[i][j]` is not zero:
+       - i. Store `i` in `s[k][0]`.
+       - ii. Store `j` in `s[k][1]`.
+       - iii. Store `a[i][j]` in `s[k][2]`.
+       - iv. Increment `k`.
+   - **Step 4:** Set `s[0][2] = k - 1` to indicate the number of non-zero elements.
+   - **Step 5:** End.
+
+#### 3. **Function: `void add(int b1[50][3], int b2[50][3], int b3[50][3])`**
+   - **Step 1:** Start.
+   - **Step 2:** Check if dimensions of `b1` and `b2` are equal.
+     - a. If not, print an error message and exit.
+   - **Step 3:** Initialize `i = 0`, `j = 0`, `k = 0` and set `b3[0][0] = b1[0][0]` and `b3[0][1] = b1[0][1]`.
+   - **Step 4:** While `i` and `j` are within bounds of `b1` and `b2`:
+     - a. Compare rows and columns of `b1[i]` and `b2[j]`.
+     - b. Insert the smaller element into `b3` and increment the respective index (`i` or `j`).
+     - c. If both elements are equal, sum their values and insert into `b3`.
+   - **Step 5:** Insert remaining elements from `b1` or `b2` into `b3`.
+   - **Step 6:** Set `b3[0][2] = k - 1` to indicate the number of non-zero elements in the resultant matrix.
+   - **Step 7:** End.
+
+#### 4. **Function: `void print(int s[100][3])`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `0` to `s[0][2]`:
+     - a. Print the elements `s[i][0]`, `s[i][1]`, and `s[i][2]` separated by tabs.
+   - **Step 3:** End.
+
+#### 5. **Function: `int main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Declare integer arrays `a[10][10]`, `b[10][10]`, `s1[100][3]`, `s2[100][3]`, `s3[100][3]` and integer variables `m`, `n`, `p`, `q`.
+   - **Step 3:** Prompt the user to enter the dimensions and elements of the first matrix (`a`).
+   - **Step 4:** Prompt the user to enter the dimensions and elements of the second matrix (`b`).
+   - **Step 5:** Convert both matrices to sparse matrix form by calling `sparse()`.
+   - **Step 6:** Add the two sparse matrices using `add()`.
+   - **Step 7:** Print the original and resultant sparse matrices by calling `print()`.
+   - **Step 8:** End.
+
+---
+
+### **Result:**
+The program successfully reads two sparse matrices, adds them, and displays the resultant sparse matrix in tuple form. The output will show the addition of non-zero elements from both matrices with their respective positions.

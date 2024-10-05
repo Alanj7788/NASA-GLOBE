@@ -1,0 +1,12 @@
+AIM::Lex program to count vowels and consonants.
+
+Algorithm::
+Start
+    - Declaration of variables
+    - Rules for identifying and counting vowels and consonants.
+    - Take the input string from the user
+    - Print the total number of vowels and consonants.
+Stop
+
+Result::
+Implemented lex program to identify and count vowels and consonants.

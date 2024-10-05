@@ -1,0 +1,53 @@
+### **AIM:**
+To implement and demonstrate binary tree traversal methods (inorder, preorder, and postorder).
+
+### **DATA Structures Used:**
+- **Binary Tree**: Represented using a linked list structure where each node has data and pointers to left and right children.
+
+### **Algorithm:**
+
+#### 1. **Function: `void buildtree(struct tree *ptr)`**
+   - **Step 1:** Start.
+   - **Step 2:** If `ptr` is not `NULL`:
+     - a. Prompt and read data for the current node and assign it to `ptr->data`.
+     - b. Initialize `ptr->lc` and `ptr->rc` to `NULL`.
+     - c. Prompt if the left child should be created:
+       - i. If yes, allocate memory for the left child node, assign it to `ptr->lc`, and recursively call `buildtree` for the left child.
+     - d. Prompt if the right child should be created:
+       - i. If yes, allocate memory for the right child node, assign it to `ptr->rc`, and recursively call `buildtree` for the right child.
+   - **Step 3:** End.
+
+#### 2. **Function: `void inorder(struct tree *ptr)`**
+   - **Step 1:** Start.
+   - **Step 2:** If `ptr` is not `NULL`:
+     - a. Recursively call `inorder` for the left child.
+     - b. Print the data of the current node.
+     - c. Recursively call `inorder` for the right child.
+   - **Step 3:** End.
+
+#### 3. **Function: `void preorder(struct tree *ptr)`**
+   - **Step 1:** Start.
+   - **Step 2:** If `ptr` is not `NULL`:
+     - a. Print the data of the current node.
+     - b. Recursively call `preorder` for the left child.
+     - c. Recursively call `preorder` for the right child.
+   - **Step 3:** End.
+
+#### 4. **Function: `void postorder(struct tree *ptr)`**
+   - **Step 1:** Start.
+   - **Step 2:** If `ptr` is not `NULL`:
+     - a. Recursively call `postorder` for the left child.
+     - b. Recursively call `postorder` for the right child.
+     - c. Print the data of the current node.
+   - **Step 3:** End.
+
+#### 5. **Function: `int main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Declare a pointer `root` and allocate memory for it.
+   - **Step 3:** Call `buildtree` to construct the binary tree.
+   - **Step 4:** Print the result of `inorder`, `preorder`, and `postorder` traversals by calling respective functions.
+   - **Step 5:** End.
+
+### **Result:**
+The program demonstrates binary tree traversal techniques. It builds a binary tree based on user input and performs the following traversals:
+

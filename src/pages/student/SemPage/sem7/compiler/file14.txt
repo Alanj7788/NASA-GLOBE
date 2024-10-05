@@ -1,0 +1,40 @@
+%{
+#include <stdio.h>
+#include <stdlib.h>
+
+int num;
+%}
+%%
+[0-9]+ {
+    // Convert the matched text to an integer
+    num = atoi(yytext);
+
+    // Check if the number is prime
+    int is_prime = 1; // Assume the number is prime
+    if (num <= 1) {
+        is_prime = 0; // Numbers less than or equal to 1 are not prime
+    } else {
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                is_prime = 0; // Found a divisor, so the number is not prime
+                break;
+            }
+        }
+    }
+
+    // Print whether the number is prime
+    if (is_prime) {
+        printf("%d is a prime number\n", num);
+    } else {
+        printf("%d is not a prime number\n", num);
+    }
+}
+%%
+int main() {
+    printf("Enter a number: ");
+    yylex(); // Process the input
+    return 0;
+}
+int yywrap() {
+    return 1;
+}

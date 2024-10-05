@@ -1,0 +1,40 @@
+%{
+int num;
+%}
+%%
+\n { if (num%2==0) { printf("Even Number"); } else { printf("Odd Number"); } }
+%%
+int main(){
+    printf("Enter no to check: ");
+    scanf("%d", &num);
+    yylex();
+    return 0;
+}
+int yywrap() {
+    return 1;
+}
+
+or
+
+%{
+#include <stdio.h>
+int num;
+%}
+%%
+[0-9]+ { 
+    sscanf(yytext, "%d", &num); // Convert the matched text to an integer
+    if (num % 2 == 0) { 
+        printf("Even Number\n"); 
+    } else { 
+        printf("Odd Number\n"); 
+    } 
+}
+%%
+int main() {
+    printf("Enter number to check: ");
+    yylex(); // Process the input
+    return 0;
+}
+int yywrap() {
+    return 1;
+}

@@ -1,0 +1,28 @@
+### **AIM:**
+To implement a binary tree using an array and build it by taking input from the user for each node and its children.
+
+### **DATA Structures Used:**
+- **Array**: The binary tree is represented using a one-dimensional array where each element corresponds to a node in the tree. The index of the array represents the position of the node, with parent and child relationships defined by array indices.
+
+### **Algorithm:**
+
+#### 1. **Function: `void buildtree(int a[], int i, int item)`**
+   - **Step 1:** Start.
+   - **Step 2:** Assign the value `item` to `a[i]`, where `i` is the current index in the array.
+   - **Step 3:** Prompt the user to decide whether to create a left child for the current node:
+     - a. If `1`, prompt for the left child's value and recursively call `buildtree` with index `2*i`.
+   - **Step 4:** Prompt the user to decide whether to create a right child for the current node:
+     - a. If `1`, prompt for the right child's value and recursively call `buildtree` with index `2*i + 1`.
+   - **Step 5:** End.
+
+#### 2. **Function: `int main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Declare an integer array `a[100]` to store the tree nodes and initialize all elements to `-1` (indicating empty nodes).
+   - **Step 3:** Prompt the user to enter the root node value and store it in `item`.
+   - **Step 4:** Call `buildtree(a, 1, item)` to build the tree starting from the root node at index `1`.
+   - **Step 5:** Print the binary tree structure:
+     - a. Iterate through the array from index `1` to `16` and print each element. Print `-` if the element is `-1`, indicating an empty node.
+   - **Step 6:** End.
+
+### **Result:**
+The program successfully constructs a binary tree using an array representation. The user provides the root node and decides whether to create left and right children for each node. The resulting tree is then displayed with each node's value or `-` for empty positions. The example output demonstrates the tree structure built from the user inputs.

@@ -1,0 +1,18 @@
+#Creating a string and printing the string
+str1 = input("Enter the string: ") #Taking input from the user
+print(str1) #printing the string
+
+#Concantenating the string using '+'
+str2 = "World"
+str3 = str1+str2
+print("Concantenated String: ",str3)
+
+#Get substring using slicing [Start:Stop:Step]
+sub_string = str1[1:3]
+print("Substring: ",sub_string)
+
+#OUTPUT
+Enter the string: Hello
+Hello
+Concantenated String:  HelloWorld
+Substring:  el

@@ -1,0 +1,45 @@
+### **AIM:**
+To implement a program that performs insertion sort on a one-dimensional array.
+
+### **DATA Structures Used:**
+- **Array**
+
+
+### **Algorithm:**
+
+#### 1. **Function: `void read(int a[], int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `0` to `n-1`:
+     - a. Read the element and store it in `a[i]`.
+   - **Step 3:** End.
+
+#### 2. **Function: `void display(int a[], int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `0` to `n-1`:
+     - a. Print the element `a[i]` followed by a tab.
+   - **Step 3:** End.
+
+#### 3. **Function: `int insertionsort(int a[], int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `1` to `n-1`:
+     - a. Assign `a[i]` to `temp`.
+     - b. Set `j = i - 1`.
+     - c. While `j >= 0` and `a[j]` is greater than `temp`:
+       - i. Move `a[j]` to `a[j+1]`.
+       - ii. Decrement `j` by 1.
+     - d. Insert `temp` at position `j+1`.
+   - **Step 3:** End.
+
+#### 4. **Function: `int main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Declare an integer array `a[10]` and integer variables `n` and `i`.
+   - **Step 3:** Prompt the user to enter the number of elements (`n`) and read it.
+   - **Step 4:** Call `read(a, n)` to read `n` elements into the array `a[]`.
+   - **Step 5:** Call `insertionsort(a, n)` to sort the array using insertion sort.
+   - **Step 6:** Display the sorted array by calling `display(a, n)`.
+   - **Step 7:** End.
+
+---
+
+### **Result:**
+The program successfully implements insertion sort, sorting the array in ascending order.

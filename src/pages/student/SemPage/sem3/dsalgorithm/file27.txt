@@ -1,0 +1,68 @@
+Here’s the AIM, ALGORITHM, and RESULT for the doubly linked list operations program:
+
+### AIM:
+To implement a program in C to perform various operations on a doubly linked list, including insertion at the beginning, insertion at the end, insertion at a specified location, deletion from the beginning, deletion from the end, deletion after a specific node, searching for an element, and displaying the list.
+
+### ALGORITHM:
+
+1. **Start.**
+
+2. **Create a Node Structure:**
+   - Define a structure for a node in the doubly linked list containing:
+     - `int data` to store the data.
+     - `struct node *prev` to store the address of the previous node.
+     - `struct node *next` to store the address of the next node.
+
+3. **Initialize the List:**
+   - Declare a pointer `head` and initialize it to `NULL`.
+
+4. **Insertion at the Beginning (`insertion_beginning`):**
+   - Allocate memory for a new node.
+   - Check if the list is empty:
+     - If empty, set `head` to the new node.
+     - Otherwise, insert the new node before the current head and update the pointers.
+
+5. **Insertion at the End (`insertion_last`):**
+   - Allocate memory for a new node.
+   - Check if the list is empty:
+     - If empty, set `head` to the new node.
+     - Otherwise, traverse to the last node and insert the new node after it.
+
+6. **Insertion at a Specified Location (`insertion_specified`):**
+   - Allocate memory for a new node.
+   - Traverse the list to the specified location.
+   - Insert the new node at the specified location and update the pointers.
+
+7. **Deletion from the Beginning (`deletion_beginning`):**
+   - Check if the list is empty:
+     - If empty, display an underflow message.
+     - Otherwise, remove the first node and update the `head`.
+
+8. **Deletion from the End (`deletion_last`):**
+   - Check if the list is empty:
+     - If empty, display an underflow message.
+     - Otherwise, traverse to the last node, remove it, and update the pointers.
+
+9. **Deletion After a Specified Node (`deletion_specified`):**
+   - Traverse the list to find the node after which the deletion is to be done.
+   - If the next node is `NULL`, indicate that deletion is not possible.
+   - Otherwise, remove the node after the specified node and update the pointers.
+
+10. **Search for an Element (`search`):**
+    - Traverse the list to search for the specified element.
+    - If found, display the location of the element.
+    - Otherwise, indicate that the element is not found.
+
+11. **Display the List (`display`):**
+    - Traverse the list from the head and print each node’s data.
+
+12. **End.**
+
+### RESULT:
+The program successfully performs the following operations on a doubly linked list:
+- Inserts elements at the beginning, end, and at a specified location.
+- Deletes elements from the beginning, end, and after a specified node.
+- Searches for a specified element.
+- Displays the current state of the list.
+  
+The program handles both empty and non-empty lists, providing the correct output for each operation, as demonstrated in the provided output example.

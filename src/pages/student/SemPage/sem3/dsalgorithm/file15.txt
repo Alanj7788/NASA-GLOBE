@@ -1,0 +1,28 @@
+### **AIM:**
+To evaluate a postfix expression using a stack.
+
+### **DATA Structures Used:**
+- **Stack (`s1[20]`):** To hold operands and intermediate results.
+
+### **Algorithm:**
+
+#### 1. **Function: `void postfix_eval()`**
+   - **Step 1:** Initialize `top` and `top1` to `-1`.
+   - **Step 2:** Loop through each character in the postfix expression `p`:
+     - a. If the character is a digit:
+       - i. Convert the character to an integer and push it onto the stack `s1`.
+     - b. If the character is an operator (`+`, `-`, `*`, `/`, `^`):
+       - i. Pop the top two operands from `s1`.
+       - ii. Perform the operation based on the operator.
+       - iii. Push the result back onto the stack `s1`.
+   - **Step 3:** Print the final result from the top of the stack `s1`.
+
+#### 2. **Function: `int main()`**
+   - **Step 1:** Read the postfix expression into `p`.
+   - **Step 2:** Call `postfix_eval()` to evaluate the expression.
+   - **Step 3:** Print the result.
+
+---
+
+### **Result:**
+The program evaluates the postfix expression `23*45*+` and prints the result `26`.

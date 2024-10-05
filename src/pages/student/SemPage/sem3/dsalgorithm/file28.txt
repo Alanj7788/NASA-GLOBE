@@ -1,0 +1,42 @@
+Here is the aim, algorithm, and result for the provided C program that counts the number of nodes in a singly linked list:
+
+### **AIM:**
+To implement a program that counts the number of nodes in a singly linked list and provides options to insert nodes at the front of the list and count the nodes.
+
+### **DATA Structures Used:**
+- **Linked List**: A linked list is used where each node contains an integer data and a pointer to the next node.
+
+### **Algorithm:**
+
+#### 1. **Function: `void insert_front(int x)`**
+   - **Step 1:** Start.
+   - **Step 2:** Allocate memory for a new node.
+   - **Step 3:** Assign the value `x` to the `data` field of the new node.
+   - **Step 4:** Set the `link` of the new node to point to the current head of the list.
+   - **Step 5:** Update the head to point to the new node.
+   - **Step 6:** End.
+
+#### 2. **Function: `void count()`**
+   - **Step 1:** Start.
+   - **Step 2:** Check if the head of the list is `NULL`:
+     - a. If `NULL`, print "Linked list is empty".
+   - **Step 3:** Initialize a counter `i` to 0.
+   - **Step 4:** Traverse the list starting from the head node:
+     - a. For each node, increment the counter `i`.
+     - b. Move to the next node.
+   - **Step 5:** Print the value of `i`, which represents the number of nodes in the list.
+   - **Step 6:** End.
+
+#### 3. **Function: `int main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Declare an integer variable `opt` to store the user's choice and an integer variable `x` for node data.
+   - **Step 3:** Use a loop to display a menu with options to insert a node at the front or count the nodes:
+     - a. Read the user's choice into `opt`.
+     - b. Based on the choice:
+       - i. If `1`, prompt for data, call `insert_front(x)` to insert a node.
+       - ii. If `2`, call `count()` to display the number of nodes.
+   - **Step 4:** Continue the loop until the user chooses the option to count nodes and exit.
+   - **Step 5:** End.
+
+### **Result:**
+The program successfully implements a singly linked list where nodes can be inserted at the front. It also accurately counts and displays the number of nodes in the list. The program provides a user-friendly menu to perform these operations, and the output demonstrates the correct functionality by showing the number of elements after inserting nodes.

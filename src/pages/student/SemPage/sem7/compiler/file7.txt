@@ -1,0 +1,17 @@
+%{
+#include <stdio.h>
+int length;
+%}
+%%
+[a-z A-Z 0-9]+ {length=yyleng;}
+"\n" {printf("length:%d",length);}
+%%
+int main(){
+printf("Enter string:");
+yylex();
+return 0;
+}
+int yywrap()
+{
+return 0;
+}

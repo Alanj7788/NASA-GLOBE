@@ -1,0 +1,27 @@
+### **Aim:**
+To evaluate a prefix expression.
+
+### **Algorithm:**
+
+1. **Initialization:**
+   - Set `top` and `top1` to `-1` (empty stack indicators).
+
+2. **Evaluation (`prefix_eval` function):**
+   - **Step 1:** Traverse the prefix expression from right to left.
+   - **Step 2:** If the character is a digit:
+     - Convert it to an integer.
+     - Push the integer onto the operand stack `s1`.
+   - **Step 3:** If the character is an operator:
+     - Pop two operands from the stack.
+     - Perform the operation based on the operator.
+     - Push the result back onto the stack.
+   - **Step 4:** After processing all characters, the result will be the only value left in the stack.
+
+3. **Main Function:**
+   - Read the prefix expression.
+   - Call `prefix_eval()` to compute and print the result.
+
+---
+
+### **Result:**
+For the prefix expression `+23`, the program computes and prints the result as `5`.

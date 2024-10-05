@@ -1,0 +1,59 @@
+### **AIM:**
+To implement basic operations of a singly linked list using C.
+
+### **DATA Structures Used:**
+- **Structure `node`:** Defines a node with integer data and a pointer to the next node.
+- **Pointer `head`:** Points to the first node of the linked list.
+
+### **Algorithm:**
+
+#### 1. **Function: `void display()`**
+   - **Step 1:** Check if the list is empty (`head` is NULL). If so, print "Linked list is empty".
+   - **Step 2:** Traverse the list from `head` to the end and print each node’s data followed by an arrow (`-->`). Print "NULL" at the end.
+
+#### 2. **Function: `void insert_front(int x)`**
+   - **Step 1:** Allocate memory for a new node.
+   - **Step 2:** Set the new node’s data to `x` and its link to the current `head`.
+   - **Step 3:** Update `head` to point to the new node.
+   - **Step 4:** Call `display()` to show the updated list.
+
+#### 3. **Function: `void insert_end(int x)`**
+   - **Step 1:** Allocate memory for a new node.
+   - **Step 2:** Set the new node’s data to `x` and its link to NULL.
+   - **Step 3:** If the list is empty, set `head` to the new node.
+   - **Step 4:** If the list is not empty, traverse to the end of the list and link the new node.
+   - **Step 5:** Call `display()` to show the updated list.
+
+#### 4. **Function: `void insert_after(int key, int x)`**
+   - **Step 1:** Traverse the list to find the node with data equal to `key`.
+   - **Step 2:** If found, allocate memory for a new node.
+   - **Step 3:** Set the new node’s data to `x` and its link to the next node of the node with `key`.
+   - **Step 4:** Update the link of the node with `key` to point to the new node.
+   - **Step 5:** Call `display()` to show the updated list.
+
+#### 5. **Function: `void delete_front()`**
+   - **Step 1:** Check if the list is empty. If so, print "List is empty. Deletion not possible".
+   - **Step 2:** If not empty, update `head` to point to the second node.
+   - **Step 3:** Free the memory of the removed node.
+   - **Step 4:** Call `display()` to show the updated list.
+
+#### 6. **Function: `void delete_end()`**
+   - **Step 1:** Check if the list is empty. If so, print "List is empty. Deletion not possible".
+   - **Step 2:** If the list has only one node, update `head` to NULL and free the node.
+   - **Step 3:** If the list has more than one node, traverse to the second last node.
+   - **Step 4:** Update the second last node’s link to NULL and free the last node.
+   - **Step 5:** Call `display()` to show the updated list.
+
+#### 7. **Function: `void delete_any(int key)`**
+   - **Step 1:** Check if the list is empty. If so, print "List is empty. Deletion not possible".
+   - **Step 2:** If the node to delete is at the `head`, update `head` to the next node and free the old `head`.
+   - **Step 3:** If the node to delete is not at the `head`, traverse the list to find the node with data equal to `key`.
+   - **Step 4:** Update the previous node’s link to skip the node with `key` and free it.
+   - **Step 5:** Call `display()` to show the updated list.
+
+#### 8. **Function: `int main()`**
+   - **Step 1:** Initialize `head` to NULL.
+   - **Step 2:** Implement a menu-driven interface to call `insert_front`, `insert_end`, `insert_after`, `delete_front`, `delete_end`, `delete_any`, and `display` based on user input.
+
+### **Result:**
+The program demonstrates basic operations on a singly linked list: inserting nodes at the front and end, inserting after a specified node, and deleting nodes from the front, end, or based on a specific key.

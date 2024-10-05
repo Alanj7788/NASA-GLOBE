@@ -1,0 +1,58 @@
+### **AIM:**
+To implement a program that performs the transpose of a sparse matrix and displays the resultant sparse matrix.
+
+### **Algorithm:**
+
+#### 1. **Function: `void read(int a[10][10], int m, int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `0` to `m-1` and each index `j` from `0` to `n-1`:
+     - a. Read the element and store it in `a[i][j]`.
+   - **Step 3:** End.
+
+#### 2. **Function: `void sparse(int a[10][10], int m, int n, int s[100][3])`**
+   - **Step 1:** Start.
+   - **Step 2:** Initialize `k = 1` and set `s[0][0] = m` and `s[0][1] = n`.
+   - **Step 3:** For each index `i` from `0` to `m-1` and each index `j` from `0` to `n-1`:
+     - a. If `a[i][j]` is not zero:
+       - i. Store `i` in `s[k][0]`.
+       - ii. Store `j` in `s[k][1]`.
+       - iii. Store `a[i][j]` in `s[k][2]`.
+       - iv. Increment `k`.
+   - **Step 4:** Set `s[0][2] = k - 1` to indicate the number of non-zero elements.
+   - **Step 5:** End.
+
+#### 3. **Function: `void print(int s[100][3])`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `0` to `s[0][2]`:
+     - a. Print the elements `s[i][0]`, `s[i][1]`, and `s[i][2]` separated by tabs.
+   - **Step 3:** End.
+
+#### 4. **Function: `void transpose(int b1[][3], int b2[][3])`**
+   - **Step 1:** Start.
+   - **Step 2:** Set `b2[0][0] = b1[0][1]` (rows of `b1` become columns of `b2`).
+   - **Step 3:** Set `b2[0][1] = b1[0][0]` (columns of `b1` become rows of `b2`).
+   - **Step 4:** Set `b2[0][2] = b1[0][2]` (number of non-zero elements remains the same).
+   - **Step 5:** Initialize `k = 1` and `n = b1[0][2]` (number of non-zero elements in `b1`).
+   - **Step 6:** For each index `i` from `0` to `b1[0][1]-1`:
+     - a. For each index `j` from `1` to `n`:
+       - i. If `i` matches `b1[j][1]` (column of `b1`):
+         - a. Store `i` in `b2[k][0]`.
+         - b. Store `b1[j][0]` in `b2[k][1]`.
+         - c. Store `b1[j][2]` in `b2[k][2]`.
+         - d. Increment `k`.
+   - **Step 7:** End.
+
+#### 5. **Function: `int main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Declare integer arrays `a[10][10]`, `t[100][3]`, and `s[100][3]`, and integer variables `m` and `n`.
+   - **Step 3:** Prompt the user to enter the dimensions of the matrix (`m` and `n`) and read them.
+   - **Step 4:** Call `read(a, m, n)` to read the matrix elements into `a`.
+   - **Step 5:** Convert the matrix `a` to sparse matrix form by calling `sparse(a, m, n, s)`.
+   - **Step 6:** Transpose the sparse matrix `s` by calling `transpose(s, t)`.
+   - **Step 7:** Print the sparse matrix before and after transposing by calling `print()`.
+   - **Step 8:** End.
+
+---
+
+### **Result:**
+The program successfully reads a matrix, converts it to its sparse matrix representation, computes the transpose of the sparse matrix, and displays both the original and transposed sparse matrices. The output will show the list of non-zero elements before and after the transpose operation.

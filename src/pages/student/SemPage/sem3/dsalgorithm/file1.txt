@@ -1,0 +1,38 @@
+
+### **AIM:**
+To implement a program that performs a linear search on an array using functions.
+
+### **DATA Structures Used:**
+- **Array**
+
+### **Algorithm:**
+
+1. **Function: `void read(int a[], int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `0` to `n-1`:
+     - a. Read the element and store it in `a[i]`.
+   - **Step 3:** End.
+
+2. **Function: `void linearsearch(int a[], int n, int search)`**
+   - **Step 1:** Start.
+   - **Step 2:** Initialize `i` to `0`.
+   - **Step 3:** Iterate over the array from index `0` to `n-1`:
+     - a. If `a[i]` equals `search`:
+       - i. Print "Element found at index `i+1`".
+       - ii. Break the loop.
+   - **Step 4:** After the loop, check if the loop completed without finding the element:
+     - a. If the element is not found, print "Element not found".
+   - **Step 5:** End.
+
+3. **Function: `int main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Declare an integer array `a[10]`, and integer variables `n`, and `search`.
+   - **Step 3:** Prompt the user to enter the number of elements (`n`) and read it.
+   - **Step 4:** Call `read(a, n)` to read `n` elements into the array `a[]`.
+   - **Step 5:** Prompt the user to enter the element to be searched (`search`) and read it.
+   - **Step 6:** Call `linearsearch(a, n, search)` to search for the element in the array.
+   - **Step 7:** End.
+
+### **Result:**
+Implemented Linear Search using a function.
+

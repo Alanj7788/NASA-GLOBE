@@ -1,0 +1,44 @@
+%{
+#include <stdio.h>
+int num;
+%}
+%%
+\n { 
+    printf("Square of %d is %d\n", num, num * num);
+}
+%%
+int main() {
+    printf("Enter number to check: ");
+    scanf("%d", &num); // Read the number from the user
+    yylex(); // Process the newline character to trigger the output
+    return 0;
+}
+int yywrap() {
+    return 1;
+}
+
+or
+
+%{
+#include <stdio.h>
+#include <stdlib.h>
+int num;
+%}
+%%
+[0-9]+ {
+    // Convert the matched text to an integer
+    num = atoi(yytext);
+    // Calculate the square of the number
+    int square = num * num;
+    // Print the result
+    printf("Square of %d is %d\n", num, square);
+}
+%%
+int main() {
+    printf("Enter a number: ");
+    yylex(); // Process the input
+    return 0;
+}
+int yywrap() {
+    return 1;
+}

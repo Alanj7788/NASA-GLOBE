@@ -1,0 +1,37 @@
+from datetime import datetime
+now = datetime.now()
+
+print("Current date and time:", now)
+
+print("\nStandard Date Formats:")
+print("YYYY-MM-DD:", now.strftime("%Y-%m-%d"))
+print("DD-MM-YYYY:", now.strftime("%d-%m-%Y"))
+print("MM/DD/YYYY:", now.strftime("%m/%d/%Y"))
+
+print("\nStandard Time Formats:")
+print("24-Hour Time:", now.strftime("%H:%M:%S"))
+print("12-Hour Time:", now.strftime("%I:%M:%S %p"))
+
+print("\nFull Date and Time with Day Name:")
+print("Full Date & Time:", now.strftime("%A, %B %d, %Y, %H:%M:%S"))
+
+print("\nCustom Format Example:")
+print("Custom Format:", now.strftime("%d %B, %Y (%I:%M %p)"))
+
+#OUTPUT
+Current date and time: 2024-08-21 17:31:25.776939
+
+Standard Date Formats:
+YYYY-MM-DD: 2024-08-21
+DD-MM-YYYY: 21-08-2024
+MM/DD/YYYY: 08/21/2024
+
+Standard Time Formats:
+24-Hour Time: 17:31:25
+12-Hour Time: 05:31:25 PM
+
+Full Date and Time with Day Name:
+Full Date & Time: Wednesday, August 21, 2024, 17:31:25
+
+Custom Format Example:
+Custom Format: 21 August, 2024 (05:31 PM)

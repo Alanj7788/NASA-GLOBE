@@ -1,0 +1,32 @@
+### **AIM:**
+To implement a stack using a linked list.
+
+### **Algorithm:**
+
+#### 1. **Function: `void display()`**
+   - **Step 1:** Check if the stack is empty (`top` is NULL). If so, print "Stack is empty".
+   - **Step 2:** Traverse the stack from `top` to the end and print each node’s data followed by an arrow (`-->`). Print "NULL" at the end.
+
+#### 2. **Function: `void push(int item)`**
+   - **Step 1:** Allocate memory for a new node.
+   - **Step 2:** Set the new node’s data to `item` and its link to the current `top`.
+   - **Step 3:** Update `top` to point to the new node.
+   - **Step 4:** Call `display()` to show the updated stack.
+
+#### 3. **Function: `void pop()`**
+   - **Step 1:** Check if the stack is empty (`top` is NULL). If so, print "Stack is empty".
+   - **Step 2:** If not empty, store the `top` node in a temporary pointer (`temp`).
+   - **Step 3:** Print the data of the node being popped (`top->data`).
+   - **Step 4:** Update `top` to point to the next node (`top->link`).
+   - **Step 5:** Free the memory of the removed node.
+   - **Step 6:** Call `display()` to show the updated stack.
+
+#### 4. **Function: `int main()`**
+   - **Step 1:** Initialize `top` to NULL.
+   - **Step 2:** Implement a menu-driven interface to call `push`, `pop`, and `display` based on user input.
+
+### **Result:**
+The program successfully implements a stack using a linked list and provides functionalities to:
+- **Push** an item onto the stack.
+- **Pop** an item from the stack.
+- **Display** the current elements in the stack.

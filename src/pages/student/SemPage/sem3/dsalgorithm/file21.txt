@@ -1,0 +1,32 @@
+### **AIM:**
+To implement a priority queue using arrays.
+
+### **DATA Structures Used:**
+- **Array (`a[20]`):** To store items and their priorities.
+
+### **Algorithm:**
+
+#### 1. **Function: `void enqueue(int item, int priority)`**
+   - **Step 1:** Check if the queue is full. If so, display a message and exit.
+   - **Step 2:** If the queue is empty, set `front` and `rear` to 0 and insert the item.
+   - **Step 3:** If the queue is not full:
+     - Shift elements to make space if needed.
+     - Find the correct position based on priority and insert the item.
+   - **Step 4:** Update the `rear` index.
+
+#### 2. **Function: `void dequeue()`**
+   - **Step 1:** Check if the queue is empty. If so, display a message and exit.
+   - **Step 2:** If the queue has only one item, remove it and reset `front` and `rear`.
+   - **Step 3:** Otherwise, remove the item at the `front` and update the `front` index.
+
+#### 3. **Function: `void display()`**
+   - **Step 1:** Check if the queue is empty. If so, display a message and exit.
+   - **Step 2:** Traverse from `front` to `rear` and print the items.
+
+#### 4. **Function: `int main()`**
+   - **Step 1:** Initialize `front` and `rear` to -1.
+   - **Step 2:** Read the size of the queue.
+   - **Step 3:** Implement a menu-driven interface to call `enqueue`, `dequeue`, and `display` based on user input.
+
+### **Result:**
+The program demonstrates the operation of a priority queue by allowing insertion of items with associated priorities, removing items based on their priority, and displaying the queue.

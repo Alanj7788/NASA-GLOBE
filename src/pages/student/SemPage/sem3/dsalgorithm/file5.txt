@@ -1,0 +1,45 @@
+
+### **AIM:**
+To implement a program that performs selection sort on a one-dimensional array.
+
+### **DATA Structures Used:**
+- **Array**
+
+
+### **Algorithm:**
+
+#### 1. **Function: `void read(int a[], int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `0` to `n-1`:
+     - a. Read the element and store it in `a[i]`.
+   - **Step 3:** End.
+
+#### 2. **Function: `void display(int a[], int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `0` to `n-1`:
+     - a. Print the element `a[i]` followed by a tab.
+   - **Step 3:** End.
+
+#### 3. **Function: `void selectionsort(int a[], int n)`**
+   - **Step 1:** Start.
+   - **Step 2:** For each index `i` from `0` to `n-2`:
+     - a. Set `position = i`.
+     - b. For each index `j` from `i+1` to `n-1`:
+       - i. If `a[position] > a[j]`, set `position = j`.
+     - c. If `position != i`, then:
+       - i. Swap `a[i]` with `a[position]` using the `swap` variable.
+   - **Step 3:** End.
+
+#### 4. **Function: `int main()`**
+   - **Step 1:** Start.
+   - **Step 2:** Declare an integer array `a[100]` and integer variables `n`, `i`, `j`, `position`, and `swap`.
+   - **Step 3:** Prompt the user to enter the number of elements (`n`) and read it.
+   - **Step 4:** Prompt the user to enter `n` elements and read them into the array `a[]` using `read(a, n)`.
+   - **Step 5:** Call `selectionsort(a, n)` to sort the array using selection sort.
+   - **Step 6:** Display the sorted array by calling `display(a, n)`.
+   - **Step 7:** End.
+
+---
+
+### **Result:**
+The program successfully implements selection sort, sorting the array in ascending order.

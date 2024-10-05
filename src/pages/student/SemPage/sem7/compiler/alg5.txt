@@ -1,0 +1,13 @@
+AIM::Lex program to find the length of input string.
+
+Algorithm::
+Start
+    - Declaration of variables
+    - Rules for finding the length of input string.
+    - Take the input string from the user
+    - Print the length of string.
+Stop
+
+Result::
+Implemented lex program to find the length of input string.
+
