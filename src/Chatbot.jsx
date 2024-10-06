@@ -3,6 +3,7 @@ import { Button, Drawer } from 'flowbite-react';
 import Tesseract from 'tesseract.js';
 import { FaPlus } from 'react-icons/fa';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { useLocation } from 'react-router-dom';
 
 const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_GENERATIVE_LANGUAGE_CLIENT);
 
@@ -12,6 +13,7 @@ const Chatbot = () => {
   const [input, setInput] = useState(''); // User input
   const [messages, setMessages] = useState([]); // Messages history
   const textareaRef = useRef(null); // Ref for textarea
+  const location = useLocation();
 
   const handleClose = () => {
     setIsOpen(false);
@@ -87,6 +89,8 @@ const Chatbot = () => {
       textareaRef.current.style.height = "auto"; // Reset height after sending
     }
   };
+
+  const hideChatbot = ['/btech/sem1','/btech/sem2/clab', '/dslab', '/clab'].includes(location.pathname);
 
   return (
     <>

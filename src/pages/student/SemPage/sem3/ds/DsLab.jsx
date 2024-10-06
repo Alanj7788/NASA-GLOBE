@@ -7,50 +7,34 @@ const DsLab = () => {
 
   const questions = [
     {
-      questionText: "You've just landed on Mars and need to measure surface temperature. Which GLOBE protocol would you use to ensure consistency in your data collection?",
-      answerOptions: [
-        { answerText: 'A) Water Temperature', isCorrect: false },
-        { answerText: 'B) Surface Temperature', isCorrect: true },
-        { answerText: 'C) Soil Moisture', isCorrect: false },
-        { answerText: 'D) pH Level', isCorrect: false },
-      ],
-    },
-    {
-      questionText: 'To ensure future crops can grow on Mars, you need to measure soil acidity. Which GLOBE protocol helps you measure this?',
-      answerOptions: [
-        { answerText: 'A) pH Measurement', isCorrect: true },
-        { answerText: 'B) Tree Height', isCorrect: false },
-        { answerText: 'C) Aerosol Measurement', isCorrect: false },
-        { answerText: 'D) Turbidity', isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Mars has occasional dust storms that obscure the view of the planet's surface. Which GLOBE atmospheric protocol could help you monitor these storms?",
-      answerOptions: [
-        { answerText: 'A) Precipitation', isCorrect: false },
-        { answerText: 'B) Cloud Observation', isCorrect: false },
-        { answerText: 'C) Aerosol Measurement', isCorrect: true },
-        { answerText: 'D) Water Clarity', isCorrect: false },
-      ],
-    },
-    {
       questionText: "After a solar flare, Earth's surface temperature spikes. Which GLOBE protocol can help you monitor the changes in different regions?",
       answerOptions: [
         { answerText: 'A) Cloud Observation', isCorrect: false },
-        { answerText: 'B) Precipitation', isCorrect: false },
-        { answerText: 'C) Surface Temperature', isCorrect: true },
-        { answerText: 'D) Tree Height', isCorrect: false },
+        { answerText: 'B) Surface Temperature', isCorrect: true },
+        { answerText: 'C) Precipitation', isCorrect: false },
+        { answerText: 'D) pH Level', isCorrect: false },
       ],
     },
     {
       questionText: 'The solar flare introduces new particles into the atmosphere. Which GLOBE protocol would you use to track their movement?',
       answerOptions: [
-        { answerText: 'A) Aerosol Measurement', isCorrect: true },
-        { answerText: 'B) Soil Moisture', isCorrect: false },
-        { answerText: 'C) Water Clarity', isCorrect: false },
-        { answerText: 'D) pH Level', isCorrect: false },
+        { answerText: 'A) pH Measurement', isCorrect: false },
+        { answerText: 'B) Tree Height', isCorrect: false },
+        { answerText: 'C) Aerosol Measurement', isCorrect: true },
+        { answerText: 'D) Turbidity', isCorrect: false },
       ],
     },
+    {
+      questionText: "Some regions experience a change in cloud patterns after the solar flare. Which GLOBE protocol would help you understand these changes?",
+      answerOptions: [
+        { answerText: 'A) Precipitation', isCorrect: false },
+        { answerText: 'B) Cloud Observation', isCorrect: true },
+        { answerText: 'C) Aerosol Measurement', isCorrect: false },
+        { answerText: 'D) Water Clarity', isCorrect: false },
+      ],
+    },
+    
+    
   ];
 
   const handleAnswerOptionClick = (isCorrect) => {
